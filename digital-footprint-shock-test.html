@@ -68,8 +68,6 @@
       gap: 8px;
     }
 
-    /* HEADER */
-
     header {
       margin-bottom: 4px;
     }
@@ -129,8 +127,6 @@
       margin-top: 4px;
     }
 
-    /* SLIDES */
-
     .slides {
       position: relative;
       margin-top: 10px;
@@ -167,8 +163,6 @@
       color: #4b5563;
       margin-bottom: 0.8rem;
     }
-
-    /* QUESTION CARD */
 
     .question {
       margin-bottom: 1rem;
@@ -245,8 +239,6 @@
       box-shadow: 0 0 0 1px rgba(21, 128, 61, 0.3);
     }
 
-    /* BUTTONS */
-
     .slide-footer {
       margin-top: auto;
       padding-top: 6px;
@@ -296,8 +288,6 @@
       box-shadow: 0 10px 22px rgba(87, 83, 78, 0.15);
     }
 
-    /* RESULTS */
-
     .result-box {
       margin-top: 0.6rem;
       padding: 12px 14px;
@@ -335,17 +325,9 @@
       background: #fdfcf8;
     }
 
-    .risk-high .result-level {
-      color: #b91c1c;
-    }
-
-    .risk-medium .result-level {
-      color: #b45309;
-    }
-
-    .risk-low .result-level {
-      color: #15803d;
-    }
+    .risk-high .result-level { color: #b91c1c; }
+    .risk-medium .result-level { color: #b45309; }
+    .risk-low .result-level { color: #15803d; }
 
     .suggestions-title {
       font-weight: 600;
@@ -359,9 +341,7 @@
       color: #374151;
     }
 
-    .suggestions-list li {
-      margin-bottom: 0.25rem;
-    }
+    .suggestions-list li { margin-bottom: 0.25rem; }
 
     @media (min-width: 800px) {
       .smart-grid {
@@ -371,9 +351,7 @@
       }
     }
 
-    .mail-box {
-      margin-top: 0.9rem;
-    }
+    .mail-box { margin-top: 0.9rem; }
 
     .mail-box p {
       font-size: 0.84rem;
@@ -463,17 +441,14 @@
               </div>
             </section>
 
+            <!-- All quiz slides (1–8) are same as before -->
             <!-- Q1 -->
             <section class="slide" data-index="1">
               <div>
                 <div class="slide-title">Question 1 of 8</div>
-                <p class="slide-note">
-                  Think of one account (social or gaming) and answer based on that account only.
-                </p>
+                <p class="slide-note">Think of one account (social or gaming) and answer based on that account only.</p>
                 <div class="question">
-                  <div class="question-title">
-                    How close is your main username/handle to your real identity?
-                  </div>
+                  <div class="question-title">How close is your main username/handle to your real identity?</div>
                   <div class="options">
                     <label><input type="radio" name="q_handle" value="3" /> My real name (e.g., amanpreet_kaur)</label>
                     <label><input type="radio" name="q_handle" value="3" /> My name + numbers (e.g., aman1995)</label>
@@ -494,13 +469,9 @@
             <section class="slide" data-index="2">
               <div>
                 <div class="slide-title">Question 2 of 8</div>
-                <p class="slide-note">
-                  Answer with how you actually behave, not the “perfect” answer.
-                </p>
+                <p class="slide-note">Answer with how you actually behave, not the “perfect” answer.</p>
                 <div class="question">
-                  <div class="question-title">
-                    Do you reuse this same username across platforms?
-                  </div>
+                  <div class="question-title">Do you reuse this same username across platforms?</div>
                   <div class="options">
                     <label><input type="radio" name="q_reuse" value="3" /> Yes, almost everywhere</label>
                     <label><input type="radio" name="q_reuse" value="2" /> On a few main platforms</label>
@@ -521,13 +492,9 @@
             <section class="slide" data-index="3">
               <div>
                 <div class="slide-title">Question 3 of 8</div>
-                <p class="slide-note">
-                  We’re still mapping how visible this account feels from the outside.
-                </p>
+                <p class="slide-note">We’re still mapping how visible this account feels from the outside.</p>
                 <div class="question">
-                  <div class="question-title">
-                    Is this account public or private?
-                  </div>
+                  <div class="question-title">Is this account public or private?</div>
                   <div class="options">
                     <label><input type="radio" name="q_visibility" value="3" /> Public – anyone can view it</label>
                     <label><input type="radio" name="q_visibility" value="1" /> Private – only approved followers</label>
@@ -547,20 +514,14 @@
             <section class="slide" data-index="4">
               <div>
                 <div class="slide-title">Question 4 of 8</div>
-                <p class="slide-note">
-                  Now think about what your posts and profile actually reveal.
-                </p>
+                <p class="slide-note">Now think about what your posts and profile actually reveal.</p>
                 <div class="question">
-                  <div class="question-title">
-                    Does this profile show or hint at any of the following?
-                  </div>
-                  <div class="question-help">
-                    Think about photos, bios, captions and tagged locations.
-                  </div>
+                  <div class="question-title">Does this profile show or hint at any of the following?</div>
+                  <div class="question-help">Think about photos, bios, captions and tagged locations.</div>
                   <div class="options">
-                    <label><input type="radio" name="q_leaks" value="3" /> My school/uni or workplace, my city/suburb, AND regular places I go</label>
+                    <label><input type="radio" name="q_leaks" value="3" /> My school/uni/workplace, city/suburb, AND regular places I go</label>
                     <label><input type="radio" name="q_leaks" value="2" /> One or two of those (e.g., school OR city)</label>
-                    <label><input type="radio" name="q_leaks" value="1" /> Very small hints (e.g., one photo with a logo)</label>
+                    <label><input type="radio" name="q_leaks" value="1" /> Very small hints</label>
                     <label><input type="radio" name="q_leaks" value="0" /> None of these</label>
                   </div>
                 </div>
@@ -577,13 +538,9 @@
             <section class="slide" data-index="5">
               <div>
                 <div class="slide-title">Question 5 of 8</div>
-                <p class="slide-note">
-                  Imagine a stranger scrolling your recent posts.
-                </p>
+                <p class="slide-note">Imagine a stranger scrolling your recent posts.</p>
                 <div class="question">
-                  <div class="question-title">
-                    If a stranger scrolls your last 12 posts, could they guess your weekly routine?
-                  </div>
+                  <div class="question-title">If a stranger scrolls your last 12 posts, could they guess your weekly routine?</div>
                   <div class="options">
                     <label><input type="radio" name="q_routine" value="3" /> Yes, easily</label>
                     <label><input type="radio" name="q_routine" value="2" /> Maybe a rough idea</label>
@@ -604,16 +561,10 @@
             <section class="slide" data-index="6">
               <div>
                 <div class="slide-title">Question 6 of 8</div>
-                <p class="slide-note">
-                  Location data is one of the easiest ways to track patterns.
-                </p>
+                <p class="slide-note">Location data is one of the easiest ways to track patterns.</p>
                 <div class="question">
-                  <div class="question-title">
-                    How often do you post with visible locations or tags?
-                  </div>
-                  <div class="question-help">
-                    Geo-tag, school sign, workplace logo, bus stop, etc.
-                  </div>
+                  <div class="question-title">How often do you post with visible locations or tags?</div>
+                  <div class="question-help">Geo-tag, school sign, workplace logo, bus stop, etc.</div>
                   <div class="options">
                     <label><input type="radio" name="q_location" value="3" /> Very often</label>
                     <label><input type="radio" name="q_location" value="2" /> Sometimes</label>
@@ -634,18 +585,14 @@
             <section class="slide" data-index="7">
               <div>
                 <div class="slide-title">Question 7 of 8</div>
-                <p class="slide-note">
-                  Think about who you let into your private space.
-                </p>
+                <p class="slide-note">Think about who you let into your private space.</p>
                 <div class="question">
                   <div class="question-title">Scenario – New follow request</div>
-                  <div class="question-help">
-                    Someone you barely know sends a follow / friend request. You recognise their name from school/uni but don’t know them well.
-                  </div>
+                  <div class="question-help">Someone you barely know sends a request. You recognise their name but don't know them well.</div>
                   <div class="options">
                     <label><input type="radio" name="q_accept" value="3" /> I usually accept – more followers is fine</label>
                     <label><input type="radio" name="q_accept" value="2" /> I check their profile then often accept</label>
-                    <label><input type="radio" name="q_accept" value="1" /> I only accept if we’ve actually spoken before</label>
+                    <label><input type="radio" name="q_accept" value="1" /> I only accept if we’ve actually spoken</label>
                     <label><input type="radio" name="q_accept" value="0" /> I decline or ignore unless I really know them</label>
                   </div>
                 </div>
@@ -662,17 +609,13 @@
             <section class="slide" data-index="8">
               <div>
                 <div class="slide-title">Question 8 of 8</div>
-                <p class="slide-note">
-                  Last one – a common trick used in real attacks.
-                </p>
+              <p class="slide-note">Last one – a common trick used in real attacks.</p>
                 <div class="question">
                   <div class="question-title">Scenario – Suspicious link in DMs</div>
-                  <div class="question-help">
-                    You get a DM from someone you know with a short message and a link: “OMG is this you in this video?”
-                  </div>
+                  <div class="question-help">You get a DM: “OMG is this you in this video?” + a link.</div>
                   <div class="options">
                     <label><input type="radio" name="q_link" value="3" /> I’d probably tap the link straight away</label>
-                    <label><input type="radio" name="q_link" value="2" /> I might tap it, but if it looks weird I’ll close it</label>
+                    <label><input type="radio" name="q_link" value="2" /> I might tap it, but if it looks weird I close it</label>
                     <label><input type="radio" name="q_link" value="1" /> I’d ask them if they really sent it before clicking</label>
                     <label><input type="radio" name="q_link" value="0" /> I’d delete or report it without tapping</label>
                   </div>
@@ -686,13 +629,11 @@
               </div>
             </section>
 
-            <!-- RATING SLIDE -->
+            <!-- RATING -->
             <section class="slide" data-index="9">
               <div>
                 <div class="slide-title">Your rating & exposure level</div>
-                <p class="slide-note">
-                  This is just a snapshot of one account, not a judgment on you as a person.
-                </p>
+                <p class="slide-note">This is just a snapshot of one account, not a judgment on you.</p>
 
                 <div class="result-box" id="resultBox">
                   <div id="resultLevel" class="result-level"></div>
@@ -704,7 +645,7 @@
                 <div class="question" style="margin-top:0.9rem;">
                   <div class="question-title">How to read this</div>
                   <div class="question-help">
-                    We’re looking at how easy it would be for a stranger to build a clear picture of your life from this account alone.
+                    We’re looking at how easy it would be for a stranger to build a picture of your life from this account alone.
                   </div>
                   <p style="font-size:0.86rem; margin:0;">
                     On the next screen, you’ll see a few <strong>small, realistic actions</strong> you can try in the next week.
@@ -720,13 +661,11 @@
               </div>
             </section>
 
-            <!-- SMART MOVES SLIDE -->
+            <!-- SMART MOVES -->
             <section class="slide" data-index="10">
               <div>
                 <div class="slide-title">Smart moves to make this week</div>
-                <p class="slide-note">
-                  You don’t need to change everything. Choose one or two actions that feel genuinely doable.
-                </p>
+                <p class="slide-note">You don’t need to change everything. Choose one or two actions that feel realistic.</p>
 
                 <div class="smart-grid">
                   <div>
@@ -739,9 +678,7 @@
                   <div>
                     <div class="question" style="margin-top:0;">
                       <div class="question-title">One-line reflection (optional)</div>
-                      <div class="question-help">
-                        What surprised you most about your digital footprint from this exercise?
-                      </div>
+                      <div class="question-help">What surprised you most about your digital footprint from this exercise?</div>
                       <textarea id="reflection" placeholder="This stays in your browser only – nothing is sent anywhere."></textarea>
                     </div>
 
@@ -759,17 +696,10 @@
                 <div class="result-box mail-box">
                   <div class="question-title">Join Aman P Kaur’s Cyber Updates</div>
                   <p>
-                    If you enjoy simple, practical tools like this and want beginner-friendly cyber tips, OSINT-style mini
-                    challenges, and resources for students, you can join my mailing list.
+                    If you enjoy simple, practical tools like this and want beginner-friendly cyber tips and student resources, you can join my mailing list.
                   </p>
                   <form class="mail-row" action="#" method="post">
-                    <!-- Replace action="#" with your email marketing form URL when ready -->
-                    <input
-                      type="email"
-                      class="text-input"
-                      name="email"
-                      placeholder="Enter your email (optional)"
-                    />
+                    <input type="email" class="text-input" name="email" placeholder="Enter your email (optional)" />
                     <button type="submit" class="btn small">Join</button>
                   </form>
                   <p style="margin-top: 6px; font-size: 0.76rem; color: #6b7280;">
@@ -795,7 +725,7 @@
   </div>
 
   <script>
-    (function () {
+    window.onload = function () {
       var slides = document.querySelectorAll('.slide');
       var progressFill = document.getElementById('progressFill');
       var stepLabel = document.getElementById('stepLabel');
@@ -804,9 +734,9 @@
       var quizCompleted = false;
 
       function showSlide(index) {
-        slides.forEach(function (slide) {
-          slide.classList.remove('active');
-        });
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].classList.remove('active');
+        }
         var target = document.querySelector('.slide[data-index="' + index + '"]');
         if (target) {
           target.classList.add('active');
@@ -855,35 +785,33 @@
         return parseInt(checked.value, 10);
       }
 
-      // Generic next buttons
+      // Next buttons
       var nextButtons = document.querySelectorAll('[data-next]');
-      nextButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var validateName = btn.getAttribute('data-validate');
+      for (var i = 0; i < nextButtons.length; i++) {
+        nextButtons[i].addEventListener('click', function () {
+          var validateName = this.getAttribute('data-validate');
           if (validateName && !validateRadio(validateName)) return;
-          var nextIndex = parseInt(btn.getAttribute('data-next'), 10);
+          var nextIndex = parseInt(this.getAttribute('data-next'), 10);
           showSlide(nextIndex);
         });
-      });
+      }
 
-      // Generic prev buttons
+      // Prev buttons
       var prevButtons = document.querySelectorAll('[data-prev]');
-      prevButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var prevIndex = parseInt(btn.getAttribute('data-prev'), 10);
+      for (var j = 0; j < prevButtons.length; j++) {
+        prevButtons[j].addEventListener('click', function () {
+          var prevIndex = parseInt(this.getAttribute('data-prev'), 10);
           showSlide(prevIndex);
         });
-      });
+      }
 
       // Start button
-      var startBtn = document.getElementById('startBtn');
-      startBtn.addEventListener('click', function () {
+      document.getElementById('startBtn').addEventListener('click', function () {
         showSlide(1);
       });
 
-      // Finish quiz and show rating
-      var finishBtn = document.getElementById('finishQuizBtn');
-      finishBtn.addEventListener('click', function () {
+      // Finish quiz
+      document.getElementById('finishQuizBtn').addEventListener('click', function () {
         if (!validateRadio('q_link')) return;
         calculateResult();
         quizCompleted = true;
@@ -891,28 +819,24 @@
       });
 
       // Rating -> Smart moves
-      var goSmartBtn = document.getElementById('goToSmartMovesBtn');
-      goSmartBtn.addEventListener('click', function () {
+      document.getElementById('goToSmartMovesBtn').addEventListener('click', function () {
         if (!quizCompleted) return;
         showSlide(10);
       });
 
-      // Back Smart moves -> Rating
-      var backRatingBtn = document.getElementById('backToRatingBtn');
-      backRatingBtn.addEventListener('click', function () {
+      // Smart moves -> Rating
+      document.getElementById('backToRatingBtn').addEventListener('click', function () {
         if (!quizCompleted) return;
         showSlide(9);
       });
 
       // Retakes
-      var retakeFromRatingBtn = document.getElementById('retakeFromRatingBtn');
-      retakeFromRatingBtn.addEventListener('click', function () {
+      document.getElementById('retakeFromRatingBtn').addEventListener('click', function () {
         resetQuiz();
         showSlide(1);
       });
 
-      var retakeFromSmartBtn = document.getElementById('retakeFromSmartMovesBtn');
-      retakeFromSmartBtn.addEventListener('click', function () {
+      document.getElementById('retakeFromSmartMovesBtn').addEventListener('click', function () {
         resetQuiz();
         showSlide(1);
       });
@@ -927,15 +851,9 @@
         var acceptScore = getIntValue('q_accept');
         var linkScore = getIntValue('q_link');
 
-        var total =
-          handleScore +
-          reuseScore +
-          visibilityScore +
-          leaksScore +
-          routineScore +
-          locationScore +
-          acceptScore +
-          linkScore;
+        var total = handleScore + reuseScore + visibilityScore +
+                    leaksScore + routineScore + locationScore +
+                    acceptScore + linkScore;
 
         var level = '';
         var message = '';
@@ -944,20 +862,17 @@
 
         if (total >= 16) {
           level = 'High Exposure';
-          message =
-            'Your online identity is highly connectable and your posts and choices reveal a lot about your routine, locations and behaviour. A stranger could build a detailed profile of you fairly quickly.';
+          message = 'Your online identity is highly connectable and your posts and choices reveal a lot about your routine, locations and behaviour.';
           rating = 5;
           resultBox.className = 'result-box risk-high';
         } else if (total >= 8) {
           level = 'Moderate Exposure';
-          message =
-            'Some parts of your digital life are quite visible, especially around locations, routines or who can reach you. With a few smart changes you can lower your digital noise a lot.';
+          message = 'Some parts of your digital life are quite visible, especially around locations, routines or who can reach you.';
           rating = 3;
           resultBox.className = 'result-box risk-medium';
         } else {
           level = 'Lower Exposure';
-          message =
-            'Right now your digital footprint is harder for strangers to map. That does not mean zero risk, but you are already making some strong privacy-aware choices.';
+          message = 'Right now your digital footprint is harder for strangers to map. You are already making some strong privacy-aware choices.';
           rating = 2;
           resultBox.className = 'result-box risk-low';
         }
@@ -967,10 +882,8 @@
           starText += i < rating ? '★' : '☆';
         }
 
-        document.getElementById('resultLevel').textContent =
-          'Your Exposure Level: ' + level;
-        document.getElementById('stars').textContent =
-          'Exposure intensity: ' + starText + ' (' + rating + '/5)';
+        document.getElementById('resultLevel').textContent = 'Your Exposure Level: ' + level;
+        document.getElementById('stars').textContent = 'Exposure intensity: ' + starText + ' (' + rating + '/5)';
         document.getElementById('resultSummary').textContent = message;
 
         var pillRow = document.getElementById('pillRow');
@@ -985,18 +898,17 @@
         if (locationScore >= 2) pills.push('Frequent location tags');
         if (acceptScore >= 2) pills.push('Often accepts weak connection requests');
         if (linkScore >= 2) pills.push('At risk of tapping suspicious links');
-
         if (pills.length === 0) {
           pills.push('Good variety in handles');
           pills.push('Limited public routine/location exposure');
         }
 
-        pills.forEach(function (text) {
+        for (var k = 0; k < pills.length; k++) {
           var span = document.createElement('span');
           span.className = 'pill';
-          span.textContent = text;
+          span.textContent = pills[k];
           pillRow.appendChild(span);
-        });
+        }
 
         buildActions({
           handleScore: handleScore,
@@ -1013,7 +925,11 @@
 
       function buildActions(scores) {
         var actions = [];
-        var handleScore = scores.handleScore;
+        function add(text) {
+          if (actions.indexOf(text) === -1) actions.push(text);
+        }
+
+        var level = scores.level;
         var reuseScore = scores.reuseScore;
         var visibilityScore = scores.visibilityScore;
         var leaksScore = scores.leaksScore;
@@ -1021,61 +937,53 @@
         var locationScore = scores.locationScore;
         var acceptScore = scores.acceptScore;
         var linkScore = scores.linkScore;
-        var level = scores.level;
-
-        function addUnique(text) {
-          if (actions.indexOf(text) === -1) actions.push(text);
-        }
 
         if (level === 'High Exposure') {
-          addUnique('Pick one main account and make it private for at least 30 days. Notice how it changes who interacts with you.');
-          addUnique('Remove or hide older posts that clearly show uniforms, street signs, school/uni names or regular locations.');
-          addUnique('Separate “real name” accounts from public ones by using a different handle for anything public-facing.');
+          add('Pick one main account and make it private for at least 30 days.');
+          add('Remove or hide older posts that clearly show uniforms, street signs or school/uni names.');
+          add('Separate “real name” accounts from public ones using different handles.');
         } else if (level === 'Moderate Exposure') {
-          addUnique('Turn off location tags by default and only add them to posts that are safe to be public long-term.');
-          addUnique('Audit your followers/friends list and remove people you cannot remember in real life.');
-          addUnique('Choose one day a month to quickly review your last 10–15 posts with “stranger eyes”.');
+          add('Turn off location tags by default and only add them to posts that are safe long-term.');
+          add('Audit your followers/friends list and remove people you cannot remember in real life.');
+          add('Choose one day a month to quickly review your last 10–15 posts with “stranger eyes”.');
         } else {
-          addUnique('Keep your main account private and continue being picky about who can see your stories and posts.');
-          addUnique('Do a quick check of app permissions (camera, mic, location) and remove any that feel unnecessary.');
-          addUnique('Share this test with a friend and compare what each of you discovered about your footprint.');
+          add('Keep your main account private and continue being picky about who can see your stories and posts.');
+          add('Do a quick check of app permissions (camera, mic, location) and remove any that feel unnecessary.');
+          add('Share this test with a friend and compare what each of you discovered about your footprint.');
         }
 
         if (reuseScore >= 2) {
-          addUnique('Use different handles on at least one platform so it is harder to automatically link all of your profiles.');
+          add('Use different handles on at least one platform so it is harder to automatically link all of your profiles.');
         }
         if (visibilityScore >= 2) {
-          addUnique('Review privacy settings for this account and switch anything “Everyone” to “Friends” or “Followers only” where possible.');
+          add('Review privacy settings and switch anything “Everyone” to “Friends” or “Followers only” where possible.');
         }
         if (locationScore >= 2 || routineScore >= 2) {
-          addUnique('Avoid posting in real time from home, school, or work. Post later, or without location, so your live routine is harder to map.');
+          add('Avoid posting in real time from home, school, or work. Post later or without location.');
         }
         if (acceptScore >= 2) {
-          addUnique('Create a simple rule: if you wouldn’t say hi to them in person, they don’t need access to your private account.');
+          add('Create a simple rule: if you wouldn’t say hi to them in person, they don’t need access to your private account.');
         }
         if (linkScore >= 2) {
-          addUnique('Treat any “Is this you in this video?” message as suspicious. Ask the person on another channel before tapping.');
+          add('Treat any “Is this you in this video?” message as suspicious. Ask the person on another channel before tapping.');
         }
 
         var actionsList = document.getElementById('actionsList');
         actionsList.innerHTML = '';
-        actions.slice(0, 5).forEach(function (item) {
+        for (var i = 0; i < actions.length && i < 5; i++) {
           var li = document.createElement('li');
-          li.textContent = item;
+          li.textContent = actions[i];
           actionsList.appendChild(li);
-        });
+        }
       }
 
       function resetQuiz() {
         var radios = document.querySelectorAll('input[type="radio"]');
-        radios.forEach(function (input) {
-          input.checked = false;
-        });
-
-        var reflection = document.getElementById('reflection');
-        if (reflection) {
-          reflection.value = '';
+        for (var i = 0; i < radios.length; i++) {
+          radios[i].checked = false;
         }
+        var reflection = document.getElementById('reflection');
+        if (reflection) reflection.value = '';
 
         document.getElementById('resultLevel').textContent = '';
         document.getElementById('resultSummary').textContent = '';
@@ -1083,18 +991,16 @@
         document.getElementById('pillRow').innerHTML = '';
         document.getElementById('actionsList').innerHTML = '';
 
-        var resultBox = document.getElementById('resultBox');
-        resultBox.className = 'result-box';
-
+        document.getElementById('resultBox').className = 'result-box';
         quizCompleted = false;
         currentIndex = 1;
         updateProgress();
         updateStepLabel();
       }
 
-      // initialise
+      // initial
       showSlide(0);
-    })();
+    };
   </script>
 </body>
 </html>
