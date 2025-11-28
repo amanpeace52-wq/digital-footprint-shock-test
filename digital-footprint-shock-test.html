@@ -35,25 +35,19 @@
     .frame {
       position: relative;
       width: 100%;
-      max-width: 960px; /* wider so less empty side space */
+      max-width: 960px;
       margin: 0 auto;
     }
 
     .card {
       width: 100%;
       border-radius: 18px;
-      padding: 18px 18px 20px;
+      padding: 22px 22px 24px;
       background: #fdfcf8;
       box-shadow: 0 18px 40px rgba(87, 83, 78, 0.18);
       border: 1px solid rgba(148, 127, 97, 0.45);
       position: relative;
       overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .card {
-        padding: 22px 24px 24px;
-      }
     }
 
     .card::before {
@@ -105,7 +99,7 @@
     .subtitle {
       font-size: 0.96rem;
       color: #4b5563;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .byline {
@@ -371,7 +365,6 @@
     }
 
     @media (min-width: 800px) {
-      /* use horizontal space on last page: two columns for suggestions + reflection */
       .smart-grid {
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -909,7 +902,7 @@
         return parseInt(checked.value, 10);
       }
 
-      // Navigation buttons (generic next/prev on slides)
+      // generic prev buttons
       document.querySelectorAll('.btn.secondary[data-prev]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var prev = parseInt(btn.getAttribute('data-prev'), 10);
@@ -917,6 +910,7 @@
         });
       });
 
+      // generic next buttons
       document.querySelectorAll('.btn[data-next]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var next = parseInt(btn.getAttribute('data-next'), 10);
@@ -931,7 +925,7 @@
         showSlide(1);
       });
 
-      // Special handling for Q3 -> fact -> Q4
+      // Q3 -> fact -> Q4
       document.getElementById('q3NextBtn').addEventListener('click', function () {
         if (!validateRadio('q_visibility')) return;
         if (factShowing) return;
@@ -1076,8 +1070,7 @@
         var handleScore = scores.handleScore;
         var reuseScore = scores.reuseScore;
         var visibilityScore = scores.visibilityScore;
-        var leaksScore = scores.leeksScore || scores.leaksScore; // typo-safe
-        leaksScore = scores.leaksScore;
+        var leaksScore = scores.leaksScore;
         var routineScore = scores.routineScore;
         var locationScore = scores.locationScore;
         var acceptScore = scores.acceptScore;
@@ -1142,6 +1135,8 @@
         resultBox.className = 'result-box';
         quizCompleted = false;
         currentIndex = 1;
+        updateProgress();
+        updateStepLabel();
       }
 
       // initial
