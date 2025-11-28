@@ -33,7 +33,6 @@
     }
 
     .frame {
-      position: relative;
       width: 100%;
       max-width: 960px;
       margin: 0 auto;
@@ -399,45 +398,6 @@
       color: #6b7280;
       text-align: center;
     }
-
-    /* TOAST FACT */
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 18px;
-      transform: translateX(-50%);
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #1f2933;
-      border: 1px solid rgba(21, 128, 61, 0.8);
-      color: #f9fafb;
-      font-size: 0.78rem;
-      display: none;
-      align-items: center;
-      gap: 6px;
-      z-index: 50;
-      box-shadow: 0 16px 40px rgba(55, 65, 81, 0.6);
-    }
-
-    .toast-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .toast.show {
-      display: inline-flex;
-      animation: toastInOut 1.5s ease-in-out forwards;
-    }
-
-    @keyframes toastInOut {
-      0% { opacity: 0; transform: translate(-50%, 12px); }
-      15% { opacity: 1; transform: translate(-50%, 0); }
-      70% { opacity: 1; transform: translate(-50%, 0); }
-      100% { opacity: 0; transform: translate(-50%, 8px); }
-    }
   </style>
 </head>
 <body>
@@ -578,7 +538,7 @@
               <div class="slide-footer">
                 <div class="btn-row">
                   <button class="btn secondary" data-prev="2">Back</button>
-                  <button class="btn" id="q3NextBtn">Next</button>
+                  <button class="btn" data-next="4" data-validate="q_visibility">Next</button>
                 </div>
               </div>
             </section>
@@ -834,30 +794,23 @@
     </div>
   </div>
 
-  <div class="toast" id="factToast">
-    <div class="toast-dot"></div>
-    <span>Quick fact: Tiny bits of data (handles + posts + likes) often add up to a surprisingly clear picture.</span>
-  </div>
-
   <script>
     (function () {
       var slides = document.querySelectorAll('.slide');
       var progressFill = document.getElementById('progressFill');
       var stepLabel = document.getElementById('stepLabel');
-      var factToast = document.getElementById('factToast');
-      var currentIndex = 0;
       var totalQuestions = 8;
-      var factShowing = false;
+      var currentIndex = 0;
       var quizCompleted = false;
 
-      function showSlide(idx) {
+      function showSlide(index) {
         slides.forEach(function (slide) {
           slide.classList.remove('active');
         });
-        var target = document.querySelector('.slide[data-index="' + idx + '"]');
+        var target = document.querySelector('.slide[data-index="' + index + '"]');
         if (target) {
           target.classList.add('active');
-          currentIndex = idx;
+          currentIndex = index;
           updateProgress();
           updateStepLabel();
         }
@@ -902,46 +855,35 @@
         return parseInt(checked.value, 10);
       }
 
-      // generic prev buttons
-      document.querySelectorAll('.btn.secondary[data-prev]').forEach(function (btn) {
+      // Generic next buttons
+      var nextButtons = document.querySelectorAll('[data-next]');
+      nextButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var prev = parseInt(btn.getAttribute('data-prev'), 10);
-          if (!isNaN(prev)) showSlide(prev);
+          var validateName = btn.getAttribute('data-validate');
+          if (validateName && !validateRadio(validateName)) return;
+          var nextIndex = parseInt(btn.getAttribute('data-next'), 10);
+          showSlide(nextIndex);
         });
       });
 
-      // generic next buttons
-      document.querySelectorAll('.btn[data-next]').forEach(function (btn) {
+      // Generic prev buttons
+      var prevButtons = document.querySelectorAll('[data-prev]');
+      prevButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var next = parseInt(btn.getAttribute('data-next'), 10);
-          var name = btn.getAttribute('data-validate');
-          if (name && !validateRadio(name)) return;
-          showSlide(next);
+          var prevIndex = parseInt(btn.getAttribute('data-prev'), 10);
+          showSlide(prevIndex);
         });
       });
 
       // Start button
-      document.getElementById('startBtn').addEventListener('click', function () {
+      var startBtn = document.getElementById('startBtn');
+      startBtn.addEventListener('click', function () {
         showSlide(1);
       });
 
-      // Q3 -> fact -> Q4
-      document.getElementById('q3NextBtn').addEventListener('click', function () {
-        if (!validateRadio('q_visibility')) return;
-        if (factShowing) return;
-
-        factShowing = true;
-        factToast.classList.add('show');
-
-        setTimeout(function () {
-          factToast.classList.remove('show');
-          factShowing = false;
-          showSlide(4);
-        }, 1500);
-      });
-
       // Finish quiz and show rating
-      document.getElementById('finishQuizBtn').addEventListener('click', function () {
+      var finishBtn = document.getElementById('finishQuizBtn');
+      finishBtn.addEventListener('click', function () {
         if (!validateRadio('q_link')) return;
         calculateResult();
         quizCompleted = true;
@@ -949,24 +891,28 @@
       });
 
       // Rating -> Smart moves
-      document.getElementById('goToSmartMovesBtn').addEventListener('click', function () {
+      var goSmartBtn = document.getElementById('goToSmartMovesBtn');
+      goSmartBtn.addEventListener('click', function () {
         if (!quizCompleted) return;
         showSlide(10);
       });
 
-      // Back from Smart moves to Rating
-      document.getElementById('backToRatingBtn').addEventListener('click', function () {
+      // Back Smart moves -> Rating
+      var backRatingBtn = document.getElementById('backToRatingBtn');
+      backRatingBtn.addEventListener('click', function () {
         if (!quizCompleted) return;
         showSlide(9);
       });
 
       // Retakes
-      document.getElementById('retakeFromRatingBtn').addEventListener('click', function () {
+      var retakeFromRatingBtn = document.getElementById('retakeFromRatingBtn');
+      retakeFromRatingBtn.addEventListener('click', function () {
         resetQuiz();
         showSlide(1);
       });
 
-      document.getElementById('retakeFromSmartMovesBtn').addEventListener('click', function () {
+      var retakeFromSmartBtn = document.getElementById('retakeFromSmartMovesBtn');
+      retakeFromSmartBtn.addEventListener('click', function () {
         resetQuiz();
         showSlide(1);
       });
@@ -1121,25 +1067,32 @@
       }
 
       function resetQuiz() {
-        document.querySelectorAll('input[type="radio"]').forEach(function (input) {
+        var radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(function (input) {
           input.checked = false;
         });
+
         var reflection = document.getElementById('reflection');
-        if (reflection) reflection.value = '';
+        if (reflection) {
+          reflection.value = '';
+        }
+
         document.getElementById('resultLevel').textContent = '';
         document.getElementById('resultSummary').textContent = '';
         document.getElementById('stars').textContent = '';
         document.getElementById('pillRow').innerHTML = '';
         document.getElementById('actionsList').innerHTML = '';
+
         var resultBox = document.getElementById('resultBox');
         resultBox.className = 'result-box';
+
         quizCompleted = false;
         currentIndex = 1;
         updateProgress();
         updateStepLabel();
       }
 
-      // initial
+      // initialise
       showSlide(0);
     })();
   </script>
