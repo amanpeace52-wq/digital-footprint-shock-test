@@ -8,7 +8,7 @@
   <style>
     :root {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color-scheme: dark;
+      color-scheme: light;
     }
 
     * {
@@ -21,95 +21,54 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: stretch;
-      background: radial-gradient(circle at top, #1f2933 0%, #111827 40%, #020617 75%, #020617 100%);
-      color: #f9fafb;
+      align-items: flex-start;
+      background: radial-gradient(circle at top, #e0e7ff 0%, #eef2ff 40%, #f9fafb 100%);
+      color: #0f172a;
     }
 
     .shell {
-      max-width: 1120px;
+      max-width: 960px;
       width: 100%;
       padding: 16px;
       display: flex;
       justify-content: center;
-      align-items: stretch;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      width: 100%;
     }
 
     .card {
-      background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,64,175,0.85), rgba(249,115,22,0.8));
-      border-radius: 24px;
-      padding: 18px 16px 24px;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(248, 250, 252, 0.08);
-      position: relative;
-      overflow: hidden;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 18px 16px 22px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.14);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background: radial-gradient(circle at top right, rgba(251,191,36,0.28), transparent 60%),
-                  radial-gradient(circle at bottom left, rgba(56,189,248,0.18), transparent 60%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .visual {
-      display: none;
-    }
-
-    @media (min-width: 880px) {
-      .layout {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
-        gap: 18px;
-      }
-
+    @media (min-width: 768px) {
       .card {
-        padding: 24px 24px 28px;
-      }
-
-      .visual {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 24px;
-        overflow: hidden;
-        background: radial-gradient(circle at top, #f97316, #7c2d12);
-        box-shadow: 0 24px 60px rgba(15,23,42,0.9);
-        border: 1px solid rgba(248, 250, 252, 0.1);
+        padding: 20px 22px 24px;
       }
     }
 
-    .visual-img {
-      flex: 1;
-      min-height: 220px;
-      background-image:
-        url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
-      background-size: cover;
-      background-position: center;
+    h1, h2 {
+      margin-top: 0;
+      color: #111827;
     }
 
-    .visual-overlay {
-      padding: 14px 14px 16px;
-      font-size: 0.86rem;
-      color: #fef9c3;
-      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(180,83,9,0.9));
+    h1 {
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
     }
 
-    .visual-tag {
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -118,149 +77,172 @@
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      background: rgba(15,23,42,0.8);
-      border: 1px solid rgba(254,249,195,0.5);
-      margin-bottom: 6px;
-    }
-
-    /* Header + progress */
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       margin-bottom: 0.55rem;
-      background: rgba(251,146,60,0.16);
-      color: #fed7aa;
-      border: 1px solid rgba(251,191,36,0.7);
-    }
-
-    h1, h2 {
-      margin-top: 0;
-      color: #fefce8;
-    }
-
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.25rem;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.35rem;
+      background: rgba(129, 140, 248, 0.1);
+      color: #4f46e5;
+      border: 1px solid rgba(129, 140, 248, 0.6);
     }
 
     .subtitle {
-      font-size: 0.92rem;
-      color: #fcd34d;
-      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 0.2rem;
     }
 
     .byline {
-      font-size: 0.8rem;
-      color: #e5e7eb;
-      margin-bottom: 0.9rem;
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-bottom: 0.85rem;
     }
+
+    /* Top nav tabs */
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+    }
+
+    .nav-tab {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #6b7280;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-tab span.num {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      border: 1px solid currentColor;
+    }
+
+    .nav-tab.active {
+      border-color: rgba(129, 140, 248, 0.9);
+      background: rgba(129, 140, 248, 0.08);
+      color: #4f46e5;
+      font-weight: 600;
+    }
+
+    .nav-tab.locked {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    /* Progress */
 
     .progress-bar {
       width: 100%;
       height: 6px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
+      background: #e5e7eb;
       overflow: hidden;
-      margin-bottom: 10px;
-      border: 1px solid rgba(248,250,252,0.08);
+      margin-bottom: 12px;
     }
 
     .progress-fill {
       height: 100%;
       width: 0%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #f97316, #facc15);
+      background: linear-gradient(90deg, #4f46e5, #22c55e);
       transition: width 0.25s ease;
     }
 
-    .step-dots {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-size: 0.75rem;
-      color: #e5e7eb;
-      align-items: center;
-    }
+    /* Views */
 
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(252,211,77,0.6);
-      background: transparent;
-    }
-
-    .dot.active {
-      background: #fb923c;
-      box-shadow: 0 0 0 3px rgba(251,146,60,0.35);
-    }
-
-    .step {
+    .view {
       display: none;
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
-    .step.active {
+    .view.active {
       display: block;
     }
 
-    .step-indicator {
-      font-size: 0.8rem;
-      color: #e5e7eb;
-      margin-bottom: 0.4rem;
-    }
-
-    .step-title {
-      font-size: 1.02rem;
+    .view-title {
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
-    .step-note {
-      font-size: 0.8rem;
-      color: #e5e7eb;
+    .view-note {
+      font-size: 0.86rem;
+      color: #4b5563;
       margin-bottom: 0.8rem;
+    }
+
+    .steps-list {
+      margin: 0 0 0.8rem;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: #374151;
+    }
+
+    .steps-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .info-box {
+      margin-top: 0.6rem;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #eef2ff;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      font-size: 0.82rem;
+      color: #4338ca;
+    }
+
+    .info-box b {
+      color: #3730a3;
     }
 
     /* Question cards */
 
+    .question-group-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.4rem 0 0.3rem;
+      color: #111827;
+    }
+
     .question {
-      margin-bottom: 0.85rem;
-      padding: 10px 11px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid rgba(31, 41, 55, 0.95);
+      margin-bottom: 0.7rem;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
     }
 
     .question-title {
       font-weight: 600;
-      margin-bottom: 0.3rem;
-      font-size: 0.92rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      color: #111827;
     }
 
     .question-help {
       font-size: 0.78rem;
-      color: #e5e7eb;
-      margin-bottom: 0.35rem;
+      color: #6b7280;
+      margin-bottom: 0.3rem;
     }
 
     .options {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.2rem;
       font-size: 0.86rem;
+      color: #111827;
     }
 
     label {
@@ -279,9 +261,9 @@
       min-height: 60px;
       resize: vertical;
       border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      color: #e5e7eb;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
       padding: 6px 8px;
       font-size: 0.86rem;
     }
@@ -289,74 +271,88 @@
     .text-input {
       width: 100%;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      color: #e5e7eb;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
       padding: 6px 10px;
       font-size: 0.86rem;
       outline: none;
+    }
+
+    .text-input:focus,
+    textarea:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.3);
     }
 
     /* Buttons */
 
     .btn-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      flex: 1;
       border: none;
       border-radius: 999px;
-      padding: 8px 14px;
+      padding: 8px 16px;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #fb923c, #fbbf24);
-      color: #111827;
-      box-shadow: 0 12px 26px rgba(251,146,60,0.6);
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: #ffffff;
+      box-shadow: 0 10px 26px rgba(79, 70, 229, 0.4);
       transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
       white-space: nowrap;
     }
 
     .btn.secondary {
-      background: transparent;
-      border: 1px solid rgba(248,250,252,0.15);
+      background: #f9fafb;
+      border: 1px solid #d1d5db;
+      color: #374151;
       box-shadow: none;
-      color: #f9fafb;
     }
 
     .btn.small {
-      flex: 0 0 auto;
       padding: 6px 12px;
       font-size: 0.8rem;
-      box-shadow: 0 9px 18px rgba(251,146,60,0.5);
+      box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 32px rgba(251,146,60,0.7);
-      opacity: 0.97;
+      box-shadow: 0 16px 30px rgba(79, 70, 229, 0.45);
+      opacity: 0.98;
     }
 
     .btn.secondary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(15,23,42,0.9);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
     }
 
+    /* Results */
+
     .result-box {
-      margin-top: 0.75rem;
+      margin-top: 0.6rem;
       padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(248,250,252,0.12);
-      font-size: 0.88rem;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: #111827;
     }
 
     .result-level {
       font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .stars {
+      font-size: 0.95rem;
+      color: #f59e0b;
       margin-bottom: 0.25rem;
     }
 
@@ -371,24 +367,21 @@
       font-size: 0.72rem;
       border-radius: 999px;
       padding: 3px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: #f9fafb;
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid #d1d5db;
+      color: #374151;
+      background: #ffffff;
     }
 
-    .risk-high {
-      color: #fecaca;
-      border-color: rgba(248,113,113,0.9);
+    .risk-high .result-level {
+      color: #b91c1c;
     }
 
-    .risk-medium {
-      color: #fef9c3;
-      border-color: rgba(250,204,21,0.9);
+    .risk-medium .result-level {
+      color: #b45309;
     }
 
-    .risk-low {
-      color: #bbf7d0;
-      border-color: rgba(74,222,128,0.9);
+    .risk-low .result-level {
+      color: #15803d;
     }
 
     .suggestions-title {
@@ -399,17 +392,21 @@
     .suggestions-list {
       margin: 0.25rem 0 0;
       padding-left: 1.1rem;
-      font-size: 0.84rem;
-      color: #e5e7eb;
+      font-size: 0.88rem;
+      color: #374151;
+    }
+
+    .suggestions-list li {
+      margin-bottom: 0.25rem;
     }
 
     .mail-box {
-      margin-top: 1rem;
+      margin-top: 0.9rem;
     }
 
     .mail-box p {
-      font-size: 0.82rem;
-      color: #e5e7eb;
+      font-size: 0.86rem;
+      color: #4b5563;
       margin-bottom: 0.45rem;
     }
 
@@ -427,371 +424,412 @@
     .footer-note {
       margin-top: 10px;
       font-size: 0.75rem;
-      color: #e5e7eb;
+      color: #6b7280;
       text-align: center;
-    }
-
-    .info-chip {
-      display: inline-flex;
-      gap: 4px;
-      align-items: center;
-      font-size: 0.78rem;
-      color: #e5e7eb;
-      margin-top: 4px;
-    }
-
-    .info-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #fbbf24;
     }
   </style>
 </head>
 <body>
   <div class="shell">
-    <div class="layout">
-      <div class="card">
-        <div class="card-inner">
-          <div class="badge">
-            <span>Cyber Awareness</span>
-            <span>•</span>
-            <span>Digital Footprint Shock Test</span>
-          </div>
+    <div class="card">
+      <div class="badge">
+        <span>Cyber Awareness</span>
+        <span>•</span>
+        <span>Digital Footprint Shock Test</span>
+      </div>
 
-          <h1>How Exposed Are You Online?</h1>
-          <p class="subtitle">
-            A short, phone-friendly challenge about one of your main social or gaming accounts.
-          </p>
-          <p class="byline">
-            Created by <strong>Aman P Kaur</strong> · Cyber Security &amp; Digital Identity Educator
-          </p>
+      <h1>Could a Stranger Map Your Life from One Account?</h1>
+      <p class="subtitle">
+        A quick, student-friendly challenge about how “trackable” you are from one social or gaming profile.
+      </p>
+      <p class="byline">
+        Created by <strong>Aman P Kaur</strong> · Cyber Security &amp; Digital Identity Educator
+      </p>
 
-          <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-view="1">
+          <span class="num">1</span> Instructions
+        </button>
+        <button class="nav-tab" data-view="2">
+          <span class="num">2</span> Quiz
+        </button>
+        <button class="nav-tab locked" data-view="3">
+          <span class="num">3</span> Rating
+        </button>
+        <button class="nav-tab locked" data-view="4">
+          <span class="num">4</span> Smart Moves
+        </button>
+      </div>
 
-          <div class="step-dots">
-            <span class="dot" data-dot="1"></span>
-            <span class="dot" data-dot="2"></span>
-            <span class="dot" data-dot="3"></span>
-            <span class="dot" data-dot="4"></span>
-            <span style="margin-left:4px; font-size:0.75rem;">Tap through the steps &rarr;</span>
-          </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
 
-          <!-- STEP 1 -->
-          <div class="step active" data-step="1">
-            <div class="step-indicator">Step 1 of 4 · Warm-up</div>
-            <div class="step-title">Before we start</div>
-            <p class="step-note">
-              Think of <strong>one</strong> account (social or gaming) while you answer. No usernames or passwords needed.
-            </p>
+      <!-- VIEW 1: INSTRUCTIONS -->
+      <div class="view active" data-view="1">
+        <div class="view-title">How this challenge works</div>
+        <p class="view-note">
+          This is a mini OSINT-style exercise. You’ll reflect on one account and see how easy it might be
+          for someone to join the dots about you.
+        </p>
 
-            <div class="question">
-              <div class="question-title">Who are you doing this test for?</div>
-              <div class="options">
-                <label><input type="radio" name="q_who" value="self" /> Myself (student)</label>
-                <label><input type="radio" name="q_who" value="friend" /> A friend / family member</label>
-                <label><input type="radio" name="q_who" value="curious" /> Just exploring / curious</label>
-              </div>
-            </div>
+        <ol class="steps-list">
+          <li>Pick <strong>one account</strong> to focus on (Instagram, TikTok, Snapchat, gaming, etc.).</li>
+          <li>Answer the quiz questions as honestly as possible based on that account.</li>
+          <li>See your <strong>exposure rating</strong> and quick feedback.</li>
+          <li>Move to <strong>Smart Moves</strong> to get 3–5 practical changes you can make this week.</li>
+        </ol>
 
-            <div class="question">
-              <div class="question-title">
-                Do you understand this test is for awareness only and will NOT collect real passwords?
-              </div>
-              <div class="options">
-                <label><input type="radio" name="q_consent" value="yes" /> Yes, I understand and want to continue</label>
-                <label><input type="radio" name="q_consent" value="no" /> No, I’d rather not</label>
-              </div>
-              <div class="info-chip">
-                <span class="info-dot"></span>
-                <span>Nothing you type here is sent anywhere – it stays in your browser.</span>
-              </div>
-            </div>
+        <div class="info-box">
+          <b>Important:</b> You will not be asked for usernames or passwords. This tool does not send your
+          answers anywhere – it runs entirely in your browser.
+        </div>
 
-            <div class="btn-row">
-              <button class="btn" id="next1">Start</button>
-            </div>
-          </div>
+        <div class="steps-list" style="margin-top:0.7rem;">
+          <li>When you’re ready, click the <strong>“Quiz” tab</strong> above or use the button below.</li>
+        </div>
 
-          <!-- STEP 2 -->
-          <div class="step" data-step="2">
-            <div class="step-indicator">Step 2 of 4 · Identity & platforms</div>
-            <div class="step-title">Your handle and how you use it</div>
-            <p class="step-note">
-              Answer with how you actually use this account, not the “perfect” answer.
-            </p>
-
-            <div class="question">
-              <div class="question-title">How close is your main username/handle to your real identity?</div>
-              <div class="options">
-                <label><input type="radio" name="q_handle" value="3" /> My real name (e.g., amanpreet_kaur)</label>
-                <label><input type="radio" name="q_handle" value="3" /> My name + numbers (e.g., aman1995)</label>
-                <label><input type="radio" name="q_handle" value="2" /> A nickname friends know is me</label>
-                <label><input type="radio" name="q_handle" value="0" /> Completely random / coded</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">Do you reuse this same username across platforms?</div>
-              <div class="options">
-                <label><input type="radio" name="q_reuse" value="3" /> Yes, almost everywhere</label>
-                <label><input type="radio" name="q_reuse" value="2" /> On a few main platforms</label>
-                <label><input type="radio" name="q_reuse" value="1" /> Rarely</label>
-                <label><input type="radio" name="q_reuse" value="0" /> Never / I change it a lot</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">Is this account public or private?</div>
-              <div class="options">
-                <label><input type="radio" name="q_visibility" value="3" /> Public – anyone can view it</label>
-                <label><input type="radio" name="q_visibility" value="1" /> Private – only approved followers</label>
-                <label><input type="radio" name="q_visibility" value="2" /> I’m not sure</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">How often do you actively use this account?</div>
-              <div class="options">
-                <label><input type="radio" name="q_platform" value="3" /> Several times a day</label>
-                <label><input type="radio" name="q_platform" value="2" /> A few times a week</label>
-                <label><input type="radio" name="q_platform" value="1" /> About once a week</label>
-                <label><input type="radio" name="q_platform" value="0" /> Rarely</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">On a scale of 1–4, how “public” does this account feel?</div>
-              <div class="question-help">This is your own perception – there is no right or wrong here.</div>
-              <div class="options">
-                <label><input type="radio" name="q_publicfeel" value="0" /> 1 – Very private, almost no one</label>
-                <label><input type="radio" name="q_publicfeel" value="1" /> 2 – Mostly people I know</label>
-                <label><input type="radio" name="q_publicfeel" value="2" /> 3 – Mix of friends and strangers</label>
-                <label><input type="radio" name="q_publicfeel" value="3" /> 4 – Pretty public, anyone could be watching</label>
-              </div>
-            </div>
-
-            <div class="btn-row">
-              <button class="btn secondary" data-prev="1">Back</button>
-              <button class="btn" id="next2">Next</button>
-            </div>
-          </div>
-
-          <!-- STEP 3 -->
-          <div class="step" data-step="3">
-            <div class="step-indicator">Step 3 of 4 · What your posts and choices reveal</div>
-            <div class="step-title">Content, routine & hypotheticals</div>
-            <p class="step-note">
-              Short scenarios based on real tricks used by attackers.
-            </p>
-
-            <div class="question">
-              <div class="question-title">Does this profile show or hint at any of the following?</div>
-              <div class="options">
-                <label><input type="radio" name="q_leaks" value="3" /> My school/uni or workplace, my city/suburb, AND regular places I go</label>
-                <label><input type="radio" name="q_leaks" value="2" /> One or two of those (e.g., school OR city)</label>
-                <label><input type="radio" name="q_leaks" value="1" /> Very small hints (e.g., one photo with a logo)</label>
-                <label><input type="radio" name="q_leaks" value="0" /> None of these</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">If a stranger scrolls your last 12 posts, could they guess your weekly routine?</div>
-              <div class="options">
-                <label><input type="radio" name="q_routine" value="3" /> Yes, easily</label>
-                <label><input type="radio" name="q_routine" value="2" /> Maybe a rough idea</label>
-                <label><input type="radio" name="q_routine" value="1" /> Probably not</label>
-                <label><input type="radio" name="q_routine" value="0" /> Definitely not</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">How often do you post with visible locations or tags?</div>
-              <div class="question-help">Geo-tag, school sign, workplace logo, bus stop, etc.</div>
-              <div class="options">
-                <label><input type="radio" name="q_location" value="3" /> Very often</label>
-                <label><input type="radio" name="q_location" value="2" /> Sometimes</label>
-                <label><input type="radio" name="q_location" value="1" /> Rarely</label>
-                <label><input type="radio" name="q_location" value="0" /> Never</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">Scenario 1: New follow request</div>
-              <div class="question-help">
-                Someone you barely know sends a follow / friend request. You recognise their name from school/uni but don’t know them well.
-              </div>
-              <div class="options">
-                <label><input type="radio" name="q_accept" value="3" /> I usually accept – more followers is fine</label>
-                <label><input type="radio" name="q_accept" value="2" /> I check their profile then often accept</label>
-                <label><input type="radio" name="q_accept" value="1" /> I only accept if we’ve actually spoken before</label>
-                <label><input type="radio" name="q_accept" value="0" /> I decline or ignore unless I really know them</label>
-              </div>
-            </div>
-
-            <div class="question">
-              <div class="question-title">Scenario 2: Suspicious link in DMs</div>
-              <div class="question-help">
-                You get a DM from someone you know with a short message and a link: “OMG is this you in this video?”
-              </div>
-              <div class="options">
-                <label><input type="radio" name="q_link" value="3" /> I’d probably tap the link straight away</label>
-                <label><input type="radio" name="q_link" value="2" /> I might tap it, but if it looks weird I’ll close it</label>
-                <label><input type="radio" name="q_link" value="1" /> I’d ask them if they really sent it before clicking</label>
-                <label><input type="radio" name="q_link" value="0" /> I’d delete or report it without tapping</label>
-              </div>
-            </div>
-
-            <div class="btn-row">
-              <button class="btn secondary" data-prev="2">Back</button>
-              <button class="btn" id="next3">See my results</button>
-            </div>
-          </div>
-
-          <!-- STEP 4 (RESULTS) -->
-          <div class="step" data-step="4">
-            <div class="step-indicator">Step 4 of 4 · Your exposure snapshot</div>
-
-            <h2>Your Digital Footprint Snapshot</h2>
-            <p class="step-note">
-              You’ve just done a mini OSINT (Open Source Intelligence) exercise on yourself – that is a real cyber security skill.
-            </p>
-
-            <div class="result-box">
-              <div id="resultLevel" class="result-level"></div>
-              <div id="resultSummary"></div>
-              <div class="pill-row" id="pillRow"></div>
-            </div>
-
-            <div class="result-box" style="margin-top:0.7rem;">
-              <div class="suggestions-title">Smart moves to make this week</div>
-              <ul class="suggestions-list" id="actionsList"></ul>
-            </div>
-
-            <div class="question" style="margin-top: 0.9rem;">
-              <div class="question-title">One-line reflection (optional)</div>
-              <div class="question-help">What surprised you most about your own digital footprint?</div>
-              <textarea id="reflection" placeholder="This stays in your browser only – nothing is sent anywhere."></textarea>
-            </div>
-
-            <div class="question">
-              <div class="question-title">Would you like more practical steps in the future?</div>
-              <div class="options">
-                <label><input type="radio" name="q_more" value="yes" /> Yes, I’d be interested</label>
-                <label><input type="radio" name="q_more" value="maybe" /> Maybe, depends on the format</label>
-                <label><input type="radio" name="q_more" value="no" /> No, I’m okay for now</label>
-              </div>
-            </div>
-
-            <div class="result-box mail-box">
-              <div class="question-title">Join Aman P Kaur’s Cyber Updates</div>
-              <p>
-                If you enjoy tools like this and want simple cyber tips, OSINT-style mini challenges, and new resources,
-                you can join my mailing list.
-              </p>
-              <form class="mail-row" action="#" method="post">
-                <!-- Replace action="#" with your email marketing form URL when ready -->
-                <input
-                  type="email"
-                  class="text-input"
-                  name="email"
-                  placeholder="Enter your email (optional)"
-                />
-                <button type="submit" class="btn small">Join</button>
-              </form>
-              <p style="margin-top: 6px; font-size: 0.72rem; color: #e5e7eb;">
-                No spam. You can unsubscribe anytime. This form does not collect your quiz answers.
-              </p>
-            </div>
-
-            <div class="btn-row">
-              <button class="btn secondary" id="retakeBtn">Retake Test</button>
-              <button class="btn" id="finishBtn">Refresh Outcome</button>
-            </div>
-
-            <div class="footer-note">
-              Awareness is your first defence. The next step is choosing one small change and actually doing it this week.<br />
-              Created by <strong>Aman P Kaur</strong>.
-            </div>
-          </div>
-
-          <!-- EXIT SCREEN IF NO CONSENT -->
-          <div class="step" data-step="exit">
-            <h2>Thanks for dropping by 👋</h2>
-            <p class="step-note">
-              This activity is designed to build awareness about digital footprints and online safety.
-              If you change your mind later, you can always come back and take the test.
-            </p>
-            <button class="btn" id="restartFromExit">Start the Test</button>
-          </div>
+        <div class="btn-row">
+          <button class="btn" id="startQuizBtn">Go to Quiz</button>
         </div>
       </div>
 
-      <!-- Side visual panel -->
-      <div class="visual">
-        <div class="visual-img"></div>
-        <div class="visual-overlay">
-          <div class="visual-tag">
-            <span>OSINT Skill Builder</span>
+      <!-- VIEW 2: QUIZ -->
+      <div class="view" data-view="2">
+        <div class="view-title">Quiz – Think about one account</div>
+        <p class="view-note">
+          Answer based on how you usually behave, not the “perfect” answer. This should take about 3–5 minutes.
+        </p>
+
+        <!-- Group 1: first 3 questions -->
+        <div class="question-group-title">Part 1 – Identity & visibility</div>
+
+        <div class="question">
+          <div class="question-title">1. How close is your main username/handle to your real identity?</div>
+          <div class="options">
+            <label><input type="radio" name="q_handle" value="3" /> My real name (e.g., amanpreet_kaur)</label>
+            <label><input type="radio" name="q_handle" value="3" /> My name + numbers (e.g., aman1995)</label>
+            <label><input type="radio" name="q_handle" value="2" /> A nickname friends know is me</label>
+            <label><input type="radio" name="q_handle" value="0" /> Completely random / coded</label>
           </div>
-          <p style="margin:0 0 6px;">
-            This challenge is built to feel like what ethical hackers and investigators do: observing public clues, linking patterns,
-            and thinking like a “friendly attacker” to spot your own risks.
+        </div>
+
+        <div class="question">
+          <div class="question-title">2. Do you reuse this same username across platforms?</div>
+          <div class="options">
+            <label><input type="radio" name="q_reuse" value="3" /> Yes, almost everywhere</label>
+            <label><input type="radio" name="q_reuse" value="2" /> On a few main platforms</label>
+            <label><input type="radio" name="q_reuse" value="1" /> Rarely</label>
+            <label><input type="radio" name="q_reuse" value="0" /> Never / I change it a lot</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <div class="question-title">3. Is this account public or private?</div>
+          <div class="options">
+            <label><input type="radio" name="q_visibility" value="3" /> Public – anyone can view it</label>
+            <label><input type="radio" name="q_visibility" value="1" /> Private – only approved followers</label>
+            <label><input type="radio" name="q_visibility" value="2" /> I’m not sure</label>
+          </div>
+        </div>
+
+        <!-- Fact card after first 3 questions -->
+        <div class="info-box">
+          <b>Quick fact:</b> Security analysts often say, “Your handle plus your posts is enough to build a
+          surprisingly accurate profile”. This is what you’re testing right now.
+        </div>
+
+        <!-- Group 2: remaining questions -->
+        <div class="question-group-title" style="margin-top:0.75rem;">Part 2 – Content, routine & scenarios</div>
+
+        <div class="question">
+          <div class="question-title">4. Does this profile show or hint at any of the following?</div>
+          <div class="question-help">
+            Think about photos, bios, captions and tagged locations.
+          </div>
+          <div class="options">
+            <label><input type="radio" name="q_leaks" value="3" /> My school/uni or workplace, my city/suburb, AND regular places I go</label>
+            <label><input type="radio" name="q_leaks" value="2" /> One or two of those (e.g., school OR city)</label>
+            <label><input type="radio" name="q_leaks" value="1" /> Very small hints (e.g., one photo with a logo)</label>
+            <label><input type="radio" name="q_leaks" value="0" /> None of these</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <div class="question-title">5. If a stranger scrolls your last 12 posts, could they guess your weekly routine?</div>
+          <div class="options">
+            <label><input type="radio" name="q_routine" value="3" /> Yes, easily</label>
+            <label><input type="radio" name="q_routine" value="2" /> Maybe a rough idea</label>
+            <label><input type="radio" name="q_routine" value="1" /> Probably not</label>
+            <label><input type="radio" name="q_routine" value="0" /> Definitely not</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <div class="question-title">6. How often do you post with visible locations or tags?</div>
+          <div class="question-help">Geo-tag, school sign, workplace logo, bus stop, etc.</div>
+          <div class="options">
+            <label><input type="radio" name="q_location" value="3" /> Very often</label>
+            <label><input type="radio" name="q_location" value="2" /> Sometimes</label>
+            <label><input type="radio" name="q_location" value="1" /> Rarely</label>
+            <label><input type="radio" name="q_location" value="0" /> Never</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <div class="question-title">7. Scenario – New follow request</div>
+          <div class="question-help">
+            Someone you barely know sends a follow / friend request. You recognise their name from school/uni but don’t know them well.
+          </div>
+          <div class="options">
+            <label><input type="radio" name="q_accept" value="3" /> I usually accept – more followers is fine</label>
+            <label><input type="radio" name="q_accept" value="2" /> I check their profile then often accept</label>
+            <label><input type="radio" name="q_accept" value="1" /> I only accept if we’ve actually spoken before</label>
+            <label><input type="radio" name="q_accept" value="0" /> I decline or ignore unless I really know them</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <div class="question-title">8. Scenario – Suspicious link in DMs</div>
+          <div class="question-help">
+            You get a DM from someone you know with a short message and a link: “OMG is this you in this video?”
+          </div>
+          <div class="options">
+            <label><input type="radio" name="q_link" value="3" /> I’d probably tap the link straight away</label>
+            <label><input type="radio" name="q_link" value="2" /> I might tap it, but if it looks weird I’ll close it</label>
+            <label><input type="radio" name="q_link" value="1" /> I’d ask them if they really sent it before clicking</label>
+            <label><input type="radio" name="q_link" value="0" /> I’d delete or report it without tapping</label>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn secondary" id="backToInstructionsBtn">Back to Instructions</button>
+          <button class="btn" id="seeRatingBtn">See my rating</button>
+        </div>
+      </div>
+
+      <!-- VIEW 3: RATING & EXPOSURE -->
+      <div class="view" data-view="3">
+        <div class="view-title">Your rating & exposure level</div>
+        <p class="view-note">
+          This is a snapshot based on your answers about one account. It’s not a judgment – it’s a starting point.
+        </p>
+
+        <div class="result-box" id="resultBox">
+          <div id="resultLevel" class="result-level"></div>
+          <div id="stars" class="stars"></div>
+          <div id="resultSummary"></div>
+          <div class="pill-row" id="pillRow"></div>
+        </div>
+
+        <div class="info-box" style="margin-top:0.8rem;">
+          This rating is about how <strong>easy</strong> it would be for a stranger to build a picture of your life –
+          not whether you are “good” or “bad” online.
+        </div>
+
+        <div class="btn-row">
+          <button class="btn secondary" id="retakeFromRatingBtn">Retake quiz</button>
+          <button class="btn" id="goToSmartMovesBtn">Show me smart moves</button>
+        </div>
+      </div>
+
+      <!-- VIEW 4: SMART MOVES & REFLECTION -->
+      <div class="view" data-view="4">
+        <div class="view-title">Smart moves to make this week</div>
+        <p class="view-note">
+          Pick one or two actions that feel realistic for you. You don’t have to fix everything at once.
+        </p>
+
+        <div class="result-box">
+          <div class="suggestions-title">Based on your answers, consider:</div>
+          <ul class="suggestions-list" id="actionsList"></ul>
+        </div>
+
+        <div class="question" style="margin-top:0.8rem;">
+          <div class="question-title">One-line reflection (optional)</div>
+          <div class="question-help">
+            What surprised you most about your digital footprint from this exercise?
+          </div>
+          <textarea id="reflection" placeholder="This stays in your browser only – nothing is sent anywhere."></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-title">Would you like more practical steps in the future?</div>
+          <div class="options">
+            <label><input type="radio" name="q_more" value="yes" /> Yes, I’d be interested</label>
+            <label><input type="radio" name="q_more" value="maybe" /> Maybe, depends on the format</label>
+            <label><input type="radio" name="q_more" value="no" /> No, I’m okay for now</label>
+          </div>
+        </div>
+
+        <div class="result-box mail-box">
+          <div class="question-title">Join Aman P Kaur’s Cyber Updates</div>
+          <p>
+            If you enjoy tools like this and want simple cyber tips, OSINT-style mini challenges, and new resources,
+            you can join my mailing list.
           </p>
-          <p style="margin:0; font-size:0.8rem; color:#fef9c3;">
-            Use it as a quick class activity, a personal check-in, or the first step before deeper cyber security learning.
+          <form class="mail-row" action="#" method="post">
+            <!-- Replace action="#" with your email marketing form URL when ready -->
+            <input
+              type="email"
+              class="text-input"
+              name="email"
+              placeholder="Enter your email (optional)"
+            />
+            <button type="submit" class="btn small">Join</button>
+          </form>
+          <p style="margin-top: 6px; font-size: 0.74rem; color: #6b7280;">
+            No spam. You can unsubscribe anytime. This form does not collect your quiz answers.
           </p>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn secondary" id="retakeFromSmartMovesBtn">Retake quiz</button>
+          <button class="btn" id="backToRatingBtn">Back to rating</button>
+        </div>
+
+        <div class="footer-note">
+          Awareness is your first defence. The next step is choosing <strong>one small change</strong> and actually doing it this week.
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var steps = document.querySelectorAll('.step');
+    (function () {
+      var views = document.querySelectorAll('.view');
+      var tabs = document.querySelectorAll('.nav-tab');
       var progressFill = document.getElementById('progressFill');
-      var dots = document.querySelectorAll('.dot');
+      var quizCompleted = false;
 
-      function updateDots(stepNumber) {
-        dots.forEach(function(dot) {
-          dot.classList.remove('active');
-          var dotStep = parseInt(dot.getAttribute('data-dot'), 10);
-          if (dotStep === stepNumber) {
-            dot.classList.add('active');
+      function setProgress(viewNum) {
+        // views 1–4 -> 0%, 33%, 66%, 100%
+        var pct = ((viewNum - 1) / 3) * 100;
+        progressFill.style.width = pct + '%';
+      }
+
+      function activateTab(viewNum) {
+        tabs.forEach(function (tab) {
+          var v = parseInt(tab.getAttribute('data-view'), 10);
+          tab.classList.remove('active');
+          if (v === viewNum) {
+            tab.classList.add('active');
           }
         });
       }
 
-      function showStep(stepNumber) {
-        steps.forEach(function(step) {
-          step.classList.remove('active');
+      function showView(viewNum) {
+        views.forEach(function (view) {
+          view.classList.remove('active');
         });
-        var selector = '.step[data-step="' + stepNumber + '"]';
-        var stepEl = document.querySelector(selector);
-        if (stepEl) {
-          stepEl.classList.add('active');
-        }
-
-        if (stepNumber === 'exit') {
-          progressFill.style.width = '0%';
-        } else {
-          var num = parseInt(stepNumber, 10);
-          var percent = (num / 4) * 100;
-          progressFill.style.width = Math.min(percent, 100) + '%';
-          if (!isNaN(num)) {
-            updateDots(num);
-          }
+        var current = document.querySelector('.view[data-view="' + viewNum + '"]');
+        if (current) {
+          current.classList.add('active');
+          setProgress(viewNum);
+          activateTab(viewNum);
         }
       }
 
-      function validateRadios(names) {
+      // Navigation tab clicks
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var v = parseInt(tab.getAttribute('data-view'), 10);
+
+          if ((v === 3 || v === 4) && !quizCompleted) {
+            alert('Please complete the quiz and see your rating first.');
+            return;
+          }
+
+          if (v === 1 || v === 2 || quizCompleted) {
+            showView(v);
+          }
+        });
+      });
+
+      // Buttons
+      var startQuizBtn = document.getElementById('startQuizBtn');
+      var backToInstructionsBtn = document.getElementById('backToInstructionsBtn');
+      var seeRatingBtn = document.getElementById('seeRatingBtn');
+      var goToSmartMovesBtn = document.getElementById('goToSmartMovesBtn');
+      var retakeFromRatingBtn = document.getElementById('retakeFromRatingBtn');
+      var retakeFromSmartMovesBtn = document.getElementById('retakeFromSmartMovesBtn');
+      var backToRatingBtn = document.getElementById('backToRatingBtn');
+
+      startQuizBtn.addEventListener('click', function () {
+        showView(2);
+      });
+
+      backToInstructionsBtn.addEventListener('click', function () {
+        showView(1);
+      });
+
+      seeRatingBtn.addEventListener('click', function () {
+        if (!validateQuiz()) return;
+        calculateResult();
+        quizCompleted = true;
+        unlockTabs();
+        showView(3);
+      });
+
+      goToSmartMovesBtn.addEventListener('click', function () {
+        if (!quizCompleted) return;
+        showView(4);
+      });
+
+      backToRatingBtn.addEventListener('click', function () {
+        if (!quizCompleted) return;
+        showView(3);
+      });
+
+      function unlockTabs() {
+        tabs.forEach(function (tab) {
+          var v = parseInt(tab.getAttribute('data-view'), 10);
+          if (v === 3 || v === 4) {
+            tab.classList.remove('locked');
+          }
+        });
+      }
+
+      retakeFromRatingBtn.addEventListener('click', function () {
+        resetQuiz();
+        quizCompleted = false;
+        lockTabsAgain();
+        showView(2);
+      });
+
+      retakeFromSmartMovesBtn.addEventListener('click', function () {
+        resetQuiz();
+        quizCompleted = false;
+        lockTabsAgain();
+        showView(2);
+      });
+
+      function lockTabsAgain() {
+        tabs.forEach(function (tab) {
+          var v = parseInt(tab.getAttribute('data-view'), 10);
+          if (v === 3 || v === 4) {
+            tab.classList.add('locked');
+          }
+        });
+      }
+
+      function validateQuiz() {
+        var names = [
+          'q_handle',
+          'q_reuse',
+          'q_visibility',
+          'q_leaks',
+          'q_routine',
+          'q_location',
+          'q_accept',
+          'q_link'
+        ];
+
         for (var i = 0; i < names.length; i++) {
           var name = names[i];
           var checked = document.querySelector('input[name="' + name + '"]:checked');
           if (!checked) {
-            alert('Please answer all questions on this step before continuing.');
+            alert('Please answer all quiz questions before continuing.');
             return false;
           }
         }
@@ -804,67 +842,10 @@
         return parseInt(checked.value, 10);
       }
 
-      // Buttons
-      var next1 = document.getElementById('next1');
-      var next2 = document.getElementById('next2');
-      var next3 = document.getElementById('next3');
-      var restartFromExit = document.getElementById('restartFromExit');
-      var retakeBtn = document.getElementById('retakeBtn');
-      var finishBtn = document.getElementById('finishBtn');
-
-      // STEP 1 -> 2 (always moves, but respects "no" consent)
-      next1.addEventListener('click', function () {
-        var consentChecked = document.querySelector('input[name="q_consent"]:checked');
-        if (consentChecked && consentChecked.value === 'no') {
-          showStep('exit');
-        } else {
-          showStep('2');
-        }
-      });
-
-      // STEP 2 -> 3
-      next2.addEventListener('click', function () {
-        if (!validateRadios(['q_handle', 'q_reuse', 'q_visibility', 'q_platform', 'q_publicfeel'])) return;
-        showStep('3');
-      });
-
-      // STEP 3 -> 4 (results)
-      next3.addEventListener('click', function () {
-        if (!validateRadios(['q_leaks', 'q_routine', 'q_location', 'q_accept', 'q_link'])) return;
-        calculateResult();
-        showStep('4');
-      });
-
-      // Back buttons
-      var backButtons = document.querySelectorAll('.btn.secondary[data-prev]');
-      backButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var prev = btn.getAttribute('data-prev');
-          showStep(prev);
-        });
-      });
-
-      restartFromExit.addEventListener('click', function () {
-        resetQuiz();
-        showStep('1');
-      });
-
-      retakeBtn.addEventListener('click', function () {
-        resetQuiz();
-        showStep('1');
-      });
-
-      finishBtn.addEventListener('click', function () {
-        calculateResult();
-        alert('Your digital footprint outcome has been refreshed below.');
-      });
-
       function calculateResult() {
         var handleScore = getIntValue('q_handle');
         var reuseScore = getIntValue('q_reuse');
         var visibilityScore = getIntValue('q_visibility');
-        var platformScore = getIntValue('q_platform');
-        var publicfeelScore = getIntValue('q_publicfeel');
         var leaksScore = getIntValue('q_leaks');
         var routineScore = getIntValue('q_routine');
         var locationScore = getIntValue('q_location');
@@ -875,55 +856,60 @@
           handleScore +
           reuseScore +
           visibilityScore +
-          platformScore +
-          publicfeelScore +
           leaksScore +
           routineScore +
           locationScore +
           acceptScore +
           linkScore;
 
-        // 10 questions, each 0–3 → max = 30
+        var maxScore = 24; // 8 questions * 3 max
         var level = '';
         var message = '';
-        var riskClass = '';
-        var pillRow = document.getElementById('pillRow');
-        pillRow.innerHTML = '';
+        var rating = 1;
+        var resultBox = document.getElementById('resultBox');
 
-        if (total >= 20) {
+        if (total >= 16) {
           level = 'High Exposure';
           message =
-            'Your online identity is highly connectable and your posts and choices reveal a lot about your routine, locations and behaviour. A stranger could build a detailed profile of you quickly.';
-          riskClass = 'risk-high';
-        } else if (total >= 10) {
+            'Your online identity is highly connectable and your posts and choices reveal a lot about your routine, locations and behaviour. A stranger could build a detailed profile of you fairly quickly.';
+          rating = 5;
+          resultBox.className = 'result-box risk-high';
+        } else if (total >= 8) {
           level = 'Moderate Exposure';
           message =
             'Some parts of your digital life are quite visible, especially around locations, routines or who can reach you. With a few smart changes you can lower your digital noise a lot.';
-          riskClass = 'risk-medium';
+          rating = 3;
+          resultBox.className = 'result-box risk-medium';
         } else {
           level = 'Lower Exposure';
           message =
             'Right now your digital footprint is harder for strangers to map. That does not mean zero risk, but you are already making some strong privacy-aware choices.';
-          riskClass = 'risk-low';
+          rating = 2;
+          resultBox.className = 'result-box risk-low';
         }
 
-        var resultLevel = document.getElementById('resultLevel');
-        var resultSummary = document.getElementById('resultSummary');
+        // Stars: 1–5
+        var starText = '';
+        for (var i = 0; i < 5; i++) {
+          starText += i < rating ? '★' : '☆';
+        }
 
-        resultLevel.textContent = 'Your Exposure Level: ' + level;
-        resultLevel.className = 'result-level ' + riskClass;
-        resultSummary.textContent = message;
+        document.getElementById('resultLevel').textContent =
+          'Your Exposure Level: ' + level;
+        document.getElementById('stars').textContent =
+          'Exposure intensity: ' + starText + ' (' + rating + '/5)';
+        document.getElementById('resultSummary').textContent = message;
+
+        var pillRow = document.getElementById('pillRow');
+        pillRow.innerHTML = '';
 
         var pills = [];
-
         if (handleScore >= 3) pills.push('Real-name style handle');
         if (reuseScore >= 2) pills.push('Same username across platforms');
         if (visibilityScore >= 2) pills.push('Public or unclear privacy settings');
-        if (platformScore >= 2) pills.push('Very active on this account');
-        if (publicfeelScore >= 2) pills.push('Feels more public than private');
         if (leaksScore >= 2) pills.push('Posts reveal school/uni/work or city');
-        if (routineScore >= 2) pills.push('Routine is visible from posts');
-        if (locationScore >= 2) pills.push('Frequent visible locations / geo-tags');
+        if (routineScore >= 2) pills.push('Routine visible from recent posts');
+        if (locationScore >= 2) pills.push('Frequent location tags');
         if (acceptScore >= 2) pills.push('Often accepts weak connection requests');
         if (linkScore >= 2) pills.push('At risk of tapping suspicious links');
 
@@ -932,19 +918,17 @@
           pills.push('Limited public routine/location exposure');
         }
 
-        for (var i = 0; i < pills.length; i++) {
+        pills.forEach(function (text) {
           var span = document.createElement('span');
           span.className = 'pill';
-          span.textContent = pills[i];
+          span.textContent = text;
           pillRow.appendChild(span);
-        }
+        });
 
         buildActions({
           handleScore: handleScore,
           reuseScore: reuseScore,
           visibilityScore: visibilityScore,
-          platformScore: platformScore,
-          publicfeelScore: publicfeelScore,
           leaksScore: leaksScore,
           routineScore: routineScore,
           locationScore: locationScore,
@@ -959,8 +943,6 @@
         var handleScore = scores.handleScore;
         var reuseScore = scores.reuseScore;
         var visibilityScore = scores.visibilityScore;
-        var platformScore = scores.platformScore;
-        var publicfeelScore = scores.publicfeelScore;
         var leaksScore = scores.leaksScore;
         var routineScore = scores.routineScore;
         var locationScore = scores.locationScore;
@@ -969,16 +951,14 @@
         var level = scores.level;
 
         function addUnique(text) {
-          if (actions.indexOf(text) === -1) {
-            actions.push(text);
-          }
+          if (actions.indexOf(text) === -1) actions.push(text);
         }
 
         // Base suggestions by level
         if (level === 'High Exposure') {
           addUnique('Pick one main account and make it private for at least 30 days. Notice how it changes who interacts with you.');
           addUnique('Remove or hide older posts that clearly show uniforms, street signs, school/uni names or regular locations.');
-          addUnique('Separate “real name” accounts from public ones using a different handle for public content.');
+          addUnique('Separate “real name” accounts from public ones by using a different handle for anything public-facing.');
         } else if (level === 'Moderate Exposure') {
           addUnique('Turn off location tags by default and only add them to posts that are safe to be public long-term.');
           addUnique('Audit your followers/friends list and remove people you cannot remember in real life.');
@@ -993,49 +973,48 @@
         if (reuseScore >= 2) {
           addUnique('Use different handles on at least one platform so it is harder to automatically link all of your profiles.');
         }
-        if (visibilityScore >= 2 || publicfeelScore >= 2) {
+        if (visibilityScore >= 2) {
           addUnique('Review privacy settings for this account and switch anything “Everyone” to “Friends” or “Followers only” where possible.');
         }
         if (locationScore >= 2 || routineScore >= 2) {
           addUnique('Avoid posting in real time from home, school, or work. Post later, or without location, so your live routine is harder to map.');
         }
         if (acceptScore >= 2) {
-          addUnique('Create a simple rule: if you would not say hi to them in person, they do not need access to your private account.');
+          addUnique('Create a simple rule: if you wouldn’t say hi to them in person, they don’t need access to your private account.');
         }
         if (linkScore >= 2) {
           addUnique('Treat any “Is this you in this video?” message as suspicious. Ask the person on another channel before tapping.');
         }
-        if (platformScore >= 2 && level !== 'Lower Exposure') {
-          addUnique('Set a weekly “digital hygiene” reminder to check one privacy setting or old post each time instead of trying to fix everything at once.');
-        }
 
         var actionsList = document.getElementById('actionsList');
         actionsList.innerHTML = '';
-        for (var i = 0; i < actions.length && i < 5; i++) {
+        actions.slice(0, 5).forEach(function (item) {
           var li = document.createElement('li');
-          li.textContent = actions[i];
+          li.textContent = item;
           actionsList.appendChild(li);
-        }
+        });
       }
 
       function resetQuiz() {
         var radios = document.querySelectorAll('input[type="radio"]');
-        for (var i = 0; i < radios.length; i++) {
-          radios[i].checked = false;
-        }
+        radios.forEach(function (input) {
+          input.checked = false;
+        });
         var reflection = document.getElementById('reflection');
         if (reflection) reflection.value = '';
         document.getElementById('resultLevel').textContent = '';
         document.getElementById('resultSummary').textContent = '';
+        document.getElementById('stars').textContent = '';
         document.getElementById('pillRow').innerHTML = '';
         document.getElementById('actionsList').innerHTML = '';
-        progressFill.style.width = '0%';
-        updateDots(1);
+        var resultBox = document.getElementById('resultBox');
+        resultBox.className = 'result-box';
+        setProgress(2);
       }
 
-      // Start state
-      showStep('1');
-    });
+      // Initial view
+      showView(1);
+    })();
   </script>
 </body>
 </html>
